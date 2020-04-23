@@ -2,16 +2,50 @@
 <html>
 <head>
   <link rel="stylesheet" href="styles.css">
+  
 </head>
 <body>
 
 <h1>Conway's Game of Life</h1>
 
-<h2>yes</h2>
+<div class="container">
+	<div class="sideBar">
+		<h2>Introduction</h2>
+		<div id="infoBar">
+		Developed by British mathematician John Horton Conway in 1970, the Game of Life is 
+		a cellular automaton model that simulates the death and reproduction of cells using the following
+		rules:
+		<ul>
+			<li>Any cell is either dead or alive at a given time.</li>
+			<li>Any live cell with two or three live neighbors lives in the next iteration.</li>
+			<li>Any live cell with less than two live neighbors dies due to underpopulation.</li>
+			<li>Any live cell with more than three live neighbors dies due to overpopulation.</li>
+			<li>Any dead cell with exactly three live neighbors becomes a live cell due to reproduction.</li>
+		</ul>
+		You can start, stop, or alter the settings of the simulation on the bar to the right of the screen, or click on cells directly to change them.
+		For more information, <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">click here.</a>
+		</div>
+	</div>
+	<div class="gameOfLife">
+		<canvas id="lifeCanvas" width="700" height="700" ></canvas>
 
-<h3>nott</h3>
-
-<div>ablong</div>
-<div>bagdad<span><a href="https://www.w3schools.com/tags/tag_a.asp">cal</a></span><div>
+	</div>
+	<div class="sideBar">
+		Cells alive: <nobr id="liveCount">0</nobr>
+		<br>
+		Iterations: <nobr id="iterCount">0</nobr>
+		<br>
+		Grid dimension: <input type="text" id="dimensionInput" value="35">
+		<br>
+		Starting population: <input type="text" id="popInput" value="0.5">
+		<br>
+		Advancement interval (seconds): <input type="text" id="speedInput" value="1.0">
+		<br>
+		<button id="startButton" onclick="startPause()">Start</button>
+		<br>
+		<button id="resetButton" onclick="resetButton()">Reset</button>
+	</div>
+	<script src="script.js"></script>
+</div>
 </body>
 </html>
